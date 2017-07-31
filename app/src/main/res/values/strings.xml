@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SoundBooster</string>
+    <string name="hello">Hello World, ThermometerActivity!</string>
 </resources>
+
