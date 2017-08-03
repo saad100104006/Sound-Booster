@@ -1,3 +1,4 @@
+/*
 package com.pregnancy.soundbooster;
 
 import android.app.Activity;
@@ -10,4 +11,4 @@ public class ThermometerActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
     }
-}
+}*/

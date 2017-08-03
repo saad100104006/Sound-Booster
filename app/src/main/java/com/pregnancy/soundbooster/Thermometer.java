@@ -1,3 +1,4 @@
+/*
 package com.pregnancy.soundbooster;
 
 import android.content.Context;
@@ -509,3 +510,4 @@ public final class Thermometer extends View implements SensorEventListener {
 		invalidate();
 	}
 }
+*/
