@@ -1,15 +1,10 @@
 package com.pregnancy.soundbooster;
 
-import android.app.NotificationManager;
 import android.content.Context;
-import android.content.Intent;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -31,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     Singleton m_Inst = Singleton.getInstance();
     private AudioManager myAudioManager;
     int tempPer = 2;
+    private boolean music,call,notification;
 
     // AudioManager mobilemode;
 
@@ -76,11 +72,13 @@ public class MainActivity extends AppCompatActivity {
 
                 if (flag == 0) {
                     imageView1.setImageResource(R.drawable.musical_on);
+                    music=true;
                     // managerOfSound();
 
                     flag = 1;
                 } else {
                     imageView1.setImageResource(R.drawable.musical_off);
+                    music=false;
 
                     flag = 0;
                 }
@@ -97,10 +95,12 @@ public class MainActivity extends AppCompatActivity {
                 if (flag2 == 0) {
 
                     imageView2.setImageResource(R.drawable.telephone_on);
+                    call=true;
                     // managerOfSound();
                     flag2 = 1;
                 } else {
                     imageView2.setImageResource(R.drawable.telephone_off);
+                    call=false;
                     flag2 = 0;
                 }
 
@@ -116,10 +116,12 @@ public class MainActivity extends AppCompatActivity {
                 if (flag3 == 0) {
 
                     imageView3.setImageResource(R.drawable.alarm_on);
+                    notification=true;
                     // managerOfSound();
                     flag3 = 1;
                 } else {
                     imageView3.setImageResource(R.drawable.alarm_off);
+                    notification=false;
                     flag3 = 0;
                 }
 
@@ -137,17 +139,17 @@ public class MainActivity extends AppCompatActivity {
         RelativeLayout panel = (RelativeLayout) findViewById(R.id.top);
         setContentView(panel);
 
-        TextView tv = new TextView(this);
+       /* TextView tv = new TextView(this);
         tv.setText("Rotary knob control\nRadu Motisan 2013\nwww.pocketmagic.net");
         tv.setGravity(Gravity.CENTER);
         RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
         lp.addRule(RelativeLayout.CENTER_HORIZONTAL);
         lp.addRule(RelativeLayout.ALIGN_PARENT_TOP);
-        panel.addView(tv, lp);
+        panel.addView(tv, lp);*/
 
         //final TextView tv2 = new TextView(this); tv2.setText("");
         percents.setText("");
-        lp = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+        RelativeLayout.LayoutParams  lp = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
         lp.addRule(RelativeLayout.CENTER_HORIZONTAL);
         lp.addRule(RelativeLayout.ALIGN_PARENT_TOP);
         //percents.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
@@ -179,21 +181,37 @@ public class MainActivity extends AppCompatActivity {
 
                             //myAudioManager.setStreamVolume(AudioManager.STREAM_RING,AudioManager.getStreamMaxVolume(AudioManager.STREAM_RING),0);
 
-                            myAudioManager.adjustVolume(AudioManager.ADJUST_RAISE, AudioManager.FLAG_SHOW_UI);
+                          //  myAudioManager.adjustVolume(AudioManager.ADJUST_RAISE, AudioManager.FLAG_SHOW_UI);
 
-                            myAudioManager.setStreamVolume(AudioManager.STREAM_ALARM, percentage/10, 0);
-                            myAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, percentage/10, 0);
-                          //  myAudioManager.setStreamVolume(AudioManager.STREAM_RING, percentage/10, 0);
+                            if(notification) {
+
+                                myAudioManager.setStreamVolume(AudioManager.STREAM_ALARM, percentage / 10, 0);
+                            }
+                            if(music) {
+                                myAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, percentage / 10, 0);
+                            }
+                            if(call) {
+                                myAudioManager.setStreamVolume(AudioManager.STREAM_RING, percentage / 10, 0);
+                            }
 
                         }
                         else if(percentage<tempPer){
 
 
-                            myAudioManager.adjustVolume(AudioManager.ADJUST_LOWER, AudioManager.FLAG_SHOW_UI);
+                          //  myAudioManager.adjustVolume(AudioManager.ADJUST_LOWER, AudioManager.FLAG_SHOW_UI);
 
-                            myAudioManager.setStreamVolume(AudioManager.STREAM_ALARM, percentage/10, 0);
-                            myAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, percentage/10, 0);
-                           // myAudioManager.setStreamVolume(AudioManager.STREAM_RING, percentage/10, 0);
+
+                            if(notification) {
+
+                                myAudioManager.setStreamVolume(AudioManager.STREAM_ALARM, percentage / 10, 0);
+                            }
+                            if(music) {
+                                myAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, percentage / 10, 0);
+                            }
+                            if(call) {
+                                myAudioManager.setStreamVolume(AudioManager.STREAM_RING, percentage / 10, 0);
+                            }
+
 
                         }
                         //

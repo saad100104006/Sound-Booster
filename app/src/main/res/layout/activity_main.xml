@@ -35,7 +35,8 @@
                 android:layout_width="100dp"
                 android:layout_height="60dp"
                 android:layout_marginLeft="30dp"
-                android:text=" "
+                android:textOff="@null"
+                android:textOn="@null"
                 android:background="@drawable/toggle2" />
 
 
@@ -94,7 +95,7 @@
                     <ImageView
                         android:id="@+id/imageView1"
                         android:layout_width="wrap_content"
-                        android:layout_height="40dp"
+                        android:layout_height="30dp"
                         android:layout_marginBottom="10dp"
                         android:layout_marginLeft="-10dp"
                         android:layout_weight=".33"
@@ -105,6 +106,8 @@
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_marginLeft="30dp"
+                        android:textOff="@null"
+                        android:textOn="@null"
                         android:background="@drawable/toggle" />
 
                 </LinearLayout>
@@ -119,7 +122,7 @@
                     <ImageView
                         android:id="@+id/imageView2"
                         android:layout_width="wrap_content"
-                        android:layout_height="40dp"
+                        android:layout_height="30dp"
                         android:layout_marginBottom="10dp"
                         android:layout_marginLeft="-10dp"
                         android:layout_weight=".33"
@@ -130,6 +133,8 @@
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_marginLeft="30dp"
+                        android:textOff="@null"
+                        android:textOn="@null"
                         android:background="@drawable/toggle" />
 
                 </LinearLayout>
@@ -143,9 +148,9 @@
                     <ImageView
                         android:id="@+id/imageView3"
                         android:layout_width="wrap_content"
-                        android:layout_height="40dp"
-                        android:layout_marginLeft="-10dp"
+                        android:layout_height="30dp"
                         android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="-10dp"
                         android:layout_weight=".33"
                         android:src="@drawable/alarm_off" />
 
@@ -154,6 +159,8 @@
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_marginLeft="30dp"
+                        android:textOff="@null"
+                        android:textOn="@null"
                         android:background="@drawable/toggle" />
 
                 </LinearLayout>
