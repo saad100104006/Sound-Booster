@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context="com.pregnancy.soundbooster.MainActivity"
     android:id="@+id/top"
-
     >
 
 
