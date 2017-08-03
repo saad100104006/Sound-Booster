@@ -14,7 +14,7 @@
         <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
 
 
-        <activity android:name=".MainActivityNew">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

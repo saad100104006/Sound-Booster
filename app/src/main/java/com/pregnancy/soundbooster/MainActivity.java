@@ -181,11 +181,19 @@ public class MainActivity extends AppCompatActivity {
 
                             myAudioManager.adjustVolume(AudioManager.ADJUST_RAISE, AudioManager.FLAG_SHOW_UI);
 
+                            myAudioManager.setStreamVolume(AudioManager.STREAM_ALARM, percentage/10, 0);
+                            myAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, percentage/10, 0);
+                            myAudioManager.setStreamVolume(AudioManager.STREAM_RING, percentage/10, 0);
+
                         }
                         else if(percentage<tempPer){
 
 
                             myAudioManager.adjustVolume(AudioManager.ADJUST_LOWER, AudioManager.FLAG_SHOW_UI);
+
+                            myAudioManager.setStreamVolume(AudioManager.STREAM_ALARM, percentage/10, 0);
+                            myAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, percentage/10, 0);
+                            myAudioManager.setStreamVolume(AudioManager.STREAM_RING, percentage/10, 0);
 
                         }
                         //
