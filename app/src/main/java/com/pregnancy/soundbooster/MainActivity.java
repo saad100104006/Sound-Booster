@@ -158,12 +158,12 @@ public class MainActivity extends AppCompatActivity {
 
 
         RoundKnobButton rv = new RoundKnobButton(this, R.drawable.stator, R.drawable.rotoron, R.drawable.rotoroff,
-                m_Inst.Scale(250), m_Inst.Scale(250));
+                m_Inst.Scale(350), m_Inst.Scale(350));
         lp = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
         lp.addRule(RelativeLayout.CENTER_IN_PARENT);
         panel.addView(rv, lp);
 
-        rv.setRotorPercentage(100);
+        rv.setRotorPercentage(0);
         rv.SetListener(new RoundKnobButton.RoundKnobButtonListener() {
             public void onStateChange(boolean newstate) {
                 Toast.makeText(MainActivity.this, "New state:" + newstate, Toast.LENGTH_SHORT).show();
@@ -183,7 +183,7 @@ public class MainActivity extends AppCompatActivity {
 
                             myAudioManager.setStreamVolume(AudioManager.STREAM_ALARM, percentage/10, 0);
                             myAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, percentage/10, 0);
-                            myAudioManager.setStreamVolume(AudioManager.STREAM_RING, percentage/10, 0);
+                          //  myAudioManager.setStreamVolume(AudioManager.STREAM_RING, percentage/10, 0);
 
                         }
                         else if(percentage<tempPer){
@@ -193,7 +193,7 @@ public class MainActivity extends AppCompatActivity {
 
                             myAudioManager.setStreamVolume(AudioManager.STREAM_ALARM, percentage/10, 0);
                             myAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, percentage/10, 0);
-                            myAudioManager.setStreamVolume(AudioManager.STREAM_RING, percentage/10, 0);
+                           // myAudioManager.setStreamVolume(AudioManager.STREAM_RING, percentage/10, 0);
 
                         }
                         //
